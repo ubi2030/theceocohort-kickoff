@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The CEO Cohort | Apply</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C5A55A;--gold-light:#D4BA7A;--gold-dark:#A8893E;--bg:#FFFFFF;--bg-white:#FFFFFF;--bg-card:#FFFFFF;--border:#E8E8E8;--border-light:#F0F0F0;--text-primary:#000000;--text-secondary:#333333;--text-muted:#666666;--text-faint:#999999}
+*{margin:0;padding:0;box-sizing:border-box}
+html{margin:0;padding:0;height:100%;overflow:hidden}
+body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;font-family:'Source Sans 3',-apple-system,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased}
+#page-wrap{height:100vh;overflow-y:auto;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 32px;height:64px;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{display:flex;align-items:center}.nav-logo-icon img{height:36px;width:auto}
+.nav-logo-text{font-size:15px;font-weight:600;color:var(--text-primary)}
+.nav-left-links{display:flex;align-items:center;gap:32px;justify-content:flex-start}.nav-right-links{display:flex;align-items:center;gap:28px;justify-content:flex-end}
+.nav-left-links a,.nav-right-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.nav-left-links a:hover,.nav-right-links a:hover{color:var(--text-primary)}
+.nav-apply{font-size:14px!important;font-weight:600!important;color:#fff!important;background:var(--gold);padding:8px 20px;transition:background .2s}
+.nav-apply:hover{background:var(--gold-dark)}
+
+/* HERO */
+.hero{padding:110px 48px 56px;max-width:1000px;margin:0 auto;text-align:center}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,66px);font-weight:400;line-height:1.1;color:#000000;letter-spacing:-1px}.hero-headline em{font-style:italic}.hero-headline sup{font-size:0.35em;vertical-align:super;font-style:normal;letter-spacing:0}
+.hero-headline .gold{color:var(--gold)}
+.hero-sub{font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:400;color:var(--text-primary);max-width:760px;margin:24px auto 0;line-height:1.75;text-align:left}
+.hero-apply-btn{display:inline-block;margin-top:32px;padding:14px 40px;background:var(--gold);color:#fff!important;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none!important;border-radius:2px;transition:background .25s;border:none;cursor:pointer}
+.hero-apply-btn:hover{background:var(--gold-dark)}
+.hero-footnote{max-width:720px;margin:18px auto 0;text-align:center}
+.footnote-text{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:#666;line-height:1.6;white-space:nowrap}
+
+
+/* ABOUT COHORT */
+.about-cohort-section{padding:80px 0;max-width:1180px;margin:0 auto;border-top:1px solid var(--border)}
+.about-cohort-inner{display:flex;align-items:flex-start;gap:48px;padding:0 48px}
+.about-logos-col{flex-shrink:0;width:155px;padding-top:4px;position:sticky;top:80px;align-self:flex-start}
+.about-logos-col img{width:100%;height:auto;display:block}
+.about-cohort-content{flex:1;min-width:0}
+.about-cohort-heading{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;font-style:italic;color:var(--text-primary);margin-bottom:32px}
+.about-cohort-body p{font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:400;color:var(--text-primary);line-height:1.75;margin-bottom:24px}
+.about-cohort-body p:last-child{margin-bottom:0}
+@media(max-width:900px){.about-logos-col{display:none}.about-cohort-inner{padding:0 24px}}
+/* APPLICATION FORM */
+.faces-band{padding:24px 0 28px;overflow:hidden}.faces-band-header{display:flex;align-items:center}.faces-band-label{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;color:var(--text-primary);white-space:nowrap;padding:0 32px 0 48px;flex-shrink:0}.faces-track-wrap{overflow:hidden;flex:1}.faces-track{display:flex;align-items:center;gap:18px;animation:scroll-faces 50s linear infinite;width:max-content}.faces-track:hover{animation-play-state:paused}@keyframes scroll-faces{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.face-avatar{width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border-light)}.face-avatar img{width:100%;height:100%;object-fit:cover;display:block}.apply-form-section{padding:60px 48px 80px;max-width:760px;margin:0 auto;border-top:1px solid var(--border)}
+.apply-form{margin-top:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;margin-bottom:24px}
+.form-group label{font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:8px;letter-spacing:.02em}
+.form-hint{font-weight:400;color:var(--text-muted)}
+.form-group input,.form-group textarea{font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--text-primary);background:#fff;border:1px solid var(--border);border-radius:2px;padding:12px 14px;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:110px}
+.char-counter{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-muted);margin-top:5px;align-self:flex-end}
+.apply-success{padding:40px 0;font-family:'Source Sans 3',sans-serif;font-size:18px;line-height:1.8;color:var(--text-primary)}.apply-success p{margin-bottom:16px}.apply-success p:last-child{margin-bottom:0}
+.apply-success-link{color:var(--gold);text-decoration:underline}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}.footnote-text{white-space:normal}}
+
+/* MULTI-STEP FORM */
+.sp-subtitle{font-family:'Source Sans 3',sans-serif;font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px}
+.step-progress{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-bottom:40px}
+.step-grp{display:flex;flex-direction:column;align-items:center;gap:8px}
+.step-dot{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);transition:all .4s ease;flex-shrink:0}
+.step-dot.sp-active{border-color:var(--gold);color:var(--gold)}
+.step-dot.sp-done{border-color:var(--gold);background:var(--gold);color:#fff}
+.step-dot.sp-done span{display:none}
+.step-dot.sp-done::after{content:'✓';font-size:13px}
+.step-conn{width:56px;height:1px;background:var(--border);margin-top:15px;flex-shrink:0;transition:background .4s ease}
+.step-conn.sp-done{background:var(--gold)}
+.step-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);transition:color .4s ease}
+.step-lbl.sp-active{color:var(--gold)}
+.step-lbl.sp-done{color:var(--gold-dark)}
+.step-panel{display:none}
+.step-panel.sp-visible{display:block;animation:spFadeIn .4s ease}
+@keyframes spFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Audio Player */
+.audio-player{border:1px solid var(--border);border-radius:6px;padding:24px;margin:24px 0;background:#fafafa}
+.audio-info-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.audio-thumb{width:44px;height:44px;border-radius:6px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.audio-thumb svg{width:20px;height:20px;fill:#fff}
+.audio-track h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:400;margin-bottom:2px;color:var(--text-primary)}
+.audio-track p{font-size:12px;color:var(--text-muted)}
+.audio-prog-bg{width:100%;height:4px;background:var(--border);border-radius:4px;cursor:pointer;margin-bottom:8px;overflow:hidden}
+.audio-prog-fill{height:100%;background:var(--gold);border-radius:4px;width:0%;transition:width .3s linear;pointer-events:none}
+.audio-times{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--text-muted);margin-bottom:16px;font-variant-numeric:tabular-nums}
+.audio-ctrl-row{display:flex;align-items:center;justify-content:center;gap:14px}
+.pp-btn{width:46px;height:46px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.pp-btn:hover{background:var(--gold-dark);transform:scale(1.05)}
+.pp-btn svg{width:18px;height:18px;fill:#fff}
+.sk-btn{width:32px;height:32px;border-radius:50%;background:transparent;border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:700;color:var(--text-muted);transition:all .2s}
+.sk-btn:hover{border-color:var(--text-secondary);color:var(--text-secondary)}
+.spd-row{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.spd-btn{padding:5px 12px;border-radius:100px;background:transparent;border:1px solid var(--border);cursor:pointer;font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:var(--text-muted);transition:all .2s}
+.spd-btn:hover,.spd-btn.spd-on{border-color:var(--gold);color:var(--gold)}
+.listen-track{display:flex;align-items:center;gap:12px;margin-top:20px;padding:14px 16px;border:1px solid var(--border);border-radius:6px}
+.listen-pct{font-family:'Source Sans 3',sans-serif;font-size:20px;font-weight:700;color:var(--gold);min-width:48px;font-variant-numeric:tabular-nums}
+.listen-copy{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--text-muted);line-height:1.5}
+.listen-copy strong{color:var(--text-primary)}
+.listen-complete{display:none;text-align:center;margin-top:16px;padding:16px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px}
+.listen-complete p{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#15803d;font-weight:500}
+.cal-iframe{width:100%;min-height:700px;border:none;border-radius:6px;margin-top:20px;display:block}
+@media(max-width:600px){.step-conn{width:28px}.cal-iframe{min-height:900px}}
+
+/* COUNTDOWN BAR */
+.cd-bar{position:sticky;top:64px;z-index:99;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 48px;display:flex;align-items:center;justify-content:center;gap:24px;transition:background .5s ease,border-color .5s ease}
+.cd-bar.cd-urgent{background:#fff9f9;border-bottom-color:rgba(192,57,43,0.3)}
+.cd-label{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-muted);white-space:nowrap;transition:color .5s}
+.cd-bar.cd-urgent .cd-label{color:#c0392b}
+.cd-timer{display:flex;align-items:flex-start;gap:3px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;min-width:32px}
+.cd-num{font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1;transition:color .5s}
+.cd-bar.cd-urgent .cd-num{color:#c0392b;animation:cdPulse 2s ease-in-out infinite}
+.cd-unit-lbl{font-family:'Source Sans 3',sans-serif;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-top:2px}
+.cd-sep{font-size:14px;color:var(--text-muted);margin:0 1px;line-height:1}
+.cd-hint{font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--gold-dark);white-space:nowrap;transition:color .5s}
+.cd-bar.cd-urgent .cd-hint{color:#c0392b}
+@keyframes cdPulse{0%,100%{opacity:1}50%{opacity:0.5}}
+/* Step 1 training title */
+.sp-training-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;font-style:italic;color:var(--text-primary);margin-bottom:24px;line-height:1.3}
+@media(max-width:600px){.cd-bar{gap:12px;padding:10px 16px}.cd-hint{display:none}}
+
+/* CAROUSEL */
+.carousel-section{padding:40px 0 60px;overflow:hidden}
+.carousel-track{display:flex;animation:scroll-left 60s linear infinite;width:max-content}
+.carousel-track:hover{animation-play-state:paused}
+@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.company-card{flex-shrink:0;width:380px;margin:0 10px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:32px 28px;transition:border-color .3s,box-shadow .3s;cursor:default}
+.company-card:hover{border-color:var(--gold);box-shadow:0 2px 12px rgba(197,165,90,.08)}
+.card-company{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-primary);margin-bottom:10px}
+.card-description{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:16px}
+.card-result{font-size:14px;font-weight:500;color:var(--text-secondary);line-height:1.5;padding-top:14px;border-top:1px solid var(--border-light)}
+.card-result strong{color:var(--gold-dark);font-weight:700}
+
+/* LOGO STRIP */
+.logo-strip{padding:44px 48px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.logo-item{display:flex;align-items:center;justify-content:center;opacity:.45;transition:opacity .3s;filter:grayscale(100%)}
+.logo-item:hover{opacity:.75;filter:grayscale(0%)}
+.logo-item img{height:24px;width:auto;display:block}
+.logo-item.tall img{height:32px}
+.logo-item.short img{height:18px}
+/* Text-based logos for companies without easy SVGs */
+.logo-text{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;color:var(--text-primary);letter-spacing:.3px;white-space:nowrap;opacity:.3;transition:opacity .3s}
+.logo-text:hover{opacity:.6}
+.logo-text.serif{font-family:'Playfair Display',serif;font-size:16px}
+
+/* WHAT */
+.what-section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.section-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:16px}
+.what-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,52px);font-weight:900;color:var(--text-primary);line-height:1.1;max-width:650px;margin-bottom:56px}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.what-card{background:var(--bg-card);border:1px solid var(--border);padding:36px 28px;border-radius:4px;transition:border-color .3s}
+.what-card:hover{border-color:var(--gold)}
+.what-card-number{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;font-style:italic;color:var(--gold);opacity:.35;line-height:1;margin-bottom:16px}
+.what-card-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:10px;line-height:1.3}
+.what-card-body{font-size:14px;color:var(--text-muted);line-height:1.65}
+
+/* STATS */
+.stats-band{background:var(--gold);padding:44px 48px}
+.stats-band-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.stat-item{text-align:center;flex:1;min-width:130px}
+.stat-number{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+.stat-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* WHO */
+.who-section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.who-headline{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,44px);font-weight:900;color:var(--text-primary);line-height:1.1;margin-bottom:24px}
+.who-body{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:28px}
+.who-list{list-style:none;padding:0}
+.who-list li{font-size:15px;color:var(--text-secondary);padding:12px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:12px}
+.who-list li::before{content:'';width:6px;height:6px;background:var(--gold);flex-shrink:0}
+.who-quote{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:44px 36px;border-radius:4px}
+.who-quote-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--text-primary);line-height:1.5;margin-bottom:20px}
+.who-quote-attr{font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase}
+
+/* APPLY */
+.apply-section{padding:100px 48px 120px;text-align:center;background:var(--bg-white);border-top:1px solid var(--border)}
+.apply-headline{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,68px);font-weight:900;color:var(--text-primary);line-height:1.06;margin-bottom:20px}
+.apply-headline em{font-style:italic;color:var(--gold)}
+.apply-sub{font-size:16px;color:var(--text-muted);max-width:520px;margin:0 auto 44px;line-height:1.6}
+.apply-btn{display:inline-block;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--gold);padding:18px 64px;text-decoration:none;transition:all .25s}
+.apply-btn:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 6px 24px rgba(197,165,90,.2)}
+.apply-deadline{font-size:13px;color:var(--text-faint);margin-top:20px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:36px 48px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+.footer-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text-primary)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none}
+.footer-links a:hover{color:var(--text-primary)}
+.footer-copy{font-size:12px;color:var(--text-faint)}
+
+
+
+.logo-card{flex-shrink:0;width:240px;height:120px;margin:0 16px;background:#FFFFFF;border:1px solid #E8E8E8;border-radius:2px;display:flex;align-items:center;justify-content:center;padding:24px 32px;transition:border-color .3s}
+.logo-card:hover{border-color:var(--gold)}
+.logo-card img{max-width:100%;max-height:48px;width:auto;height:auto;object-fit:contain;opacity:.7;transition:opacity .3s}
+.logo-card:hover img{opacity:1}
+
+/* TESTIMONIALS */
+.testimonials-main-heading{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;font-style:italic;color:var(--text-primary);text-align:center;margin-bottom:48px}
+.testimonials-section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.testimonials-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,52px);font-weight:900;color:var(--text-primary);line-height:1.1;margin-bottom:56px}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.testimonial-card{background:#0A0A0A;border-radius:4px;overflow:hidden;display:grid;grid-template-columns:200px 1fr;min-height:280px;transition:transform .3s}
+.testimonial-card:hover{transform:translateY(-2px)}
+.testimonial-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.testimonial-photo{position:relative;overflow:hidden}
+.testimonial-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.testimonial-photo::after{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1.5px solid rgba(255,255,255,.2);pointer-events:none}
+.testimonial-content{padding:32px 28px;display:flex;flex-direction:column;justify-content:center}
+.testimonial-result{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
+.testimonial-quote{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;font-style:italic;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:20px}
+.testimonial-attr{font-size:12px;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:2px}
+.testimonial-company{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px}
+.testimonial-clients{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.testimonial-client-tag{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:rgba(197,165,90,.12);padding:3px 8px;white-space:nowrap}
+@media(max-width:900px){.testimonials-grid{grid-template-columns:1fr}.testimonial-card{grid-template-columns:160px 1fr;min-height:240px}.testimonials-section{padding-left:24px;padding-right:24px}}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up-d1{transition-delay:.1s}
+.fade-up-d2{transition-delay:.2s}
+.fade-up-d3{transition-delay:.3s}
+
+@media(max-width:900px){
+nav{padding:0 24px}
+.nav-left-links{display:none}.nav-right-links a:not(.nav-apply){display:none}
+.hero{padding:150px 24px 64px}
+.what-grid{grid-template-columns:1fr}
+.who-grid{grid-template-columns:1fr;gap:40px}
+.logo-strip{padding:28px 24px;gap:28px}
+.what-section,.who-section,.apply-section{padding-left:24px;padding-right:24px}
+footer{padding:28px 24px;flex-direction:column;gap:16px;text-align:center}
+.company-card{width:300px}
+.stats-band{padding:36px 24px}
+.stat-number{font-size:32px}
+}
+</style>
+</head>
+<body>
+<div id="page-wrap">
+
+<nav>
+<div class="nav-left-links"><a href="#about">About</a><a href="https://theceocohort.com/casestudy">Case Studies</a></div>
+<a href="https://apply.theceocohort.com" class="nav-logo" style="justify-self:center">
+<div class="nav-logo-icon"><img src="images/img-1.png" alt="The CEO Cohort"></div>
+<span class="nav-logo-text">The CEO Cohort</span>
+</a>
+<div class="nav-right-links">
+<a href="https://podcasts.apple.com/us/podcast/the-ceo-cohort-kickoff/id1612031713?i=1000750717641">Podcast</a>
+<a href="#apply-form" class="nav-apply">Apply</a>
+</div>
+</nav>
+
+<div class="cd-bar" id="cd-bar">
+<div class="cd-label" id="cd-label">Your referral invite expires in</div>
+<div class="cd-timer">
+<div class="cd-unit"><div class="cd-num" id="cd-h">01</div><div class="cd-unit-lbl">HRS</div></div>
+<div class="cd-sep">:</div>
+<div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-unit-lbl">MIN</div></div>
+<div class="cd-sep">:</div>
+<div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-unit-lbl">SEC</div></div>
+</div>
+<div class="cd-hint" id="cd-hint">Listen now &middot; Book before it&rsquo;s gone</div>
+</div>
+
+<section class="hero">
+<h1 class="hero-headline fade-up" style="font-weight:700;font-size:clamp(48px,8vw,96px);">The CEO Cohort</h1>
+<p class="hero-sub fade-up" style="text-align:center;margin:20px auto 0;font-size:clamp(20px,3vw,30px);font-weight:700;line-height:1.4;">Are you ready to close Fortune 100 deals and never have to raise a round&nbsp;again?</p>
+<p class="hero-sub fade-up" style="text-align:center;margin:16px auto 0;font-size:15px;font-weight:400;">Closing enterprise deals is easier than you think.</p>
+<p class="hero-sub fade-up" style="text-align:center;margin:4px auto 0;font-size:15px;font-weight:400;">And your current product and experience are enough.</p>
+<div style="text-align:center;margin-top:14px"><a href="#apply-form" class="hero-apply-btn fade-up">Apply</a></div>
+</section>
+<section class="carousel-section">
+<div class="carousel-track">
+<div class="logo-card"><img src="images/img-1.webp" alt="Amazon"></div>
+<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
+<div class="logo-card"><img src="images/img-3.png" alt="Microsoft"></div>
+<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
+<div class="logo-card"><img src="images/img-5.png" alt="Founders Fund"></div>
+<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
+<div class="logo-card"><img src="images/img-7.png" alt="LVMH"></div>
+<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
+<div class="logo-card"><img src="images/img-9.png" alt="Visa"></div>
+<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
+<div class="logo-card"><img src="images/img-11.png" alt="Mayo Clinic"></div>
+<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
+<div class="logo-card"><img src="images/img-13.png" alt="Siemens"></div>
+<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
+<div class="logo-card"><img src="images/img-15.png" alt="AbbVie"></div>
+<div class="logo-card"><img src="images/img-16.png" alt="Kaiser Permanente"></div>
+<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
+<!-- duplicate for loop -->
+<div class="logo-card"><img src="images/img-1.webp" alt="Amazon"></div>
+<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
+<div class="logo-card"><img src="images/img-3.png" alt="Microsoft"></div>
+<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
+<div class="logo-card"><img src="images/img-5.png" alt="Founders Fund"></div>
+<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
+<div class="logo-card"><img src="images/img-7.png" alt="LVMH"></div>
+<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
+<div class="logo-card"><img src="images/img-9.png" alt="Visa"></div>
+<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
+<div class="logo-card"><img src="images/img-11.png" alt="Mayo Clinic"></div>
+<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
+<div class="logo-card"><img src="images/img-13.png" alt="Siemens"></div>
+<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
+<div class="logo-card"><img src="images/img-15.png" alt="AbbVie"></div>
+<div class="logo-card"><img src="images/img-16.png" alt="Kaiser Permanente"></div>
+<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
+</div>
+</section>
+
+<section class="about-cohort-section" id="about">
+<div class="about-cohort-inner">
+<div class="about-cohort-content">
+<h2 class="about-cohort-heading">What is the CEO Cohort?</h2>
+<div class="about-cohort-body">
+<p>The CEO Cohort is the Tier 1 Institution for tech founders to close Fortune 100 deals and never have to raise a round again. Closing enterprise deals is easier than you think. And your current product and experience are enough. Our founders include bootstrapped to public company CEOs, seed stage to Series D ventures, from every industry and sector. You should apply if you want to 1000x your business and life.</p>
+<p class="p1"><p>If you&rsquo;re accepted to The CEO Cohort, enrollment starts at $5,000 and includes everything from Fortune 100 Masterclasses to Tier 1 Fundraising to Live Cohort Coaching Calls to 24/7 ongoing async support. If accelerators take you from 0 to 1, The CEO Cohort takes you from 1 to n.</p>
+<p class="p1"><p>Every founder works directly with The CEO Cohort General Partner, Jonathan Herzog. Jonathan is a successful ed-tech startup founder, has advised thousands of startups, including coach to OpenAI, Reddit, Coinbase, Flexport, and works closely with a small group of startups he personally hand-selects every batch.</p>
+<p class="p1"><p>Trained by Bill Campbell, coach to Steve Jobs, Jeff Bezos, and Bill Gates, Jonathan&rsquo;s work has received endorsements from the likes of Elon Musk, Jack Dorsey, Matt Mullenweg, and Vitalik Buterin. He is Harvard&rsquo;s Valedictorian, former Goldman Sachs, and built an exit to community of $293+ Billion.</p>
+<p class="p1"><p>The CEO Cohort takes founders from heads-down product mode to scaled-up distribution mode through the Customer Financed Acquisition Protocol&trade;. It&rsquo;s the programmatic unlock for Founder Mode.</p>
+<p class="p1"><p>Today, the CEO Cohort alumni community is one of the most powerful communities in the world, and its members have a strong commitment to help one another. And you might be our next founder. If you want to join us, please do apply!</p>
+</div></div>
+</div>
+</section>
+
+<section class="apply-form-section" id="apply-form">
+
+<div class="step-progress">
+<div class="step-grp"><div class="step-dot sp-active" id="sp-dot-1"><span>1</span></div><div class="step-lbl sp-active" id="sp-lbl-1">Apply</div></div>
+<div class="step-conn" id="sp-conn-1"></div>
+<div class="step-grp"><div class="step-dot" id="sp-dot-2"><span>2</span></div><div class="step-lbl" id="sp-lbl-2">Book</div></div>
+<div class="step-conn" id="sp-conn-2"></div>
+<div class="step-grp"><div class="step-dot" id="sp-dot-3"><span>3</span></div><div class="step-lbl" id="sp-lbl-3">Listen</div></div>
+</div>
+
+<div class="step-panel sp-visible" id="sp-panel-1">
+<h2 class="about-cohort-heading">Application</h2>
+<p class="sp-training-title">Close Fortune 100 Deals in 5 Vital Steps: Free Tier 1 Training</p>
+<div class="faces-band"><div class="faces-band-header"><div class="faces-track-wrap"><div class="faces-track"><div class="face-avatar"><img src="images/img-1.jpg" alt="joerogers"></div><div class="face-avatar"><img src="images/img-2.jpg" alt="nathaniel"></div><div class="face-avatar"><img src="images/img-3.jpg" alt="ashleigh"></div><div class="face-avatar"><img src="images/img-4.jpg" alt="cornelius"></div><div class="face-avatar"><img src="images/img-5.jpg" alt="vignan"></div><div class="face-avatar"><img src="images/img-6.jpg" alt="andrewyang"></div><div class="face-avatar"><img src="images/img-7.jpg" alt="davidi"></div><div class="face-avatar"><img src="images/img-8.jpg" alt="marc"></div><div class="face-avatar"><img src="images/img-9.jpg" alt="mark"></div><div class="face-avatar"><img src="images/img-10.jpg" alt="sumit"></div><div class="face-avatar"><img src="images/img-11.jpg" alt="tess"></div><div class="face-avatar"><img src="images/img-12.jpg" alt="larry"></div><div class="face-avatar"><img src="images/img-13.jpg" alt="balaji"></div><div class="face-avatar"><img src="images/img-14.jpg" alt="chelsie"></div><div class="face-avatar"><img src="images/img-15.jpg" alt="suman"></div><div class="face-avatar"><img src="images/img-16.jpg" alt="solon"></div><div class="face-avatar"><img src="images/img-17.jpg" alt="vitalik"></div><div class="face-avatar"><img src="images/img-18.jpg" alt="ben"></div><div class="face-avatar"><img src="images/img-19.jpg" alt="chris"></div><div class="face-avatar"><img src="images/img-1.jpg" alt="joerogers"></div><div class="face-avatar"><img src="images/img-2.jpg" alt="nathaniel"></div><div class="face-avatar"><img src="images/img-3.jpg" alt="ashleigh"></div><div class="face-avatar"><img src="images/img-4.jpg" alt="cornelius"></div><div class="face-avatar"><img src="images/img-5.jpg" alt="vignan"></div><div class="face-avatar"><img src="images/img-6.jpg" alt="andrewyang"></div><div class="face-avatar"><img src="images/img-7.jpg" alt="davidi"></div><div class="face-avatar"><img src="images/img-8.jpg" alt="marc"></div><div class="face-avatar"><img src="images/img-9.jpg" alt="mark"></div><div class="face-avatar"><img src="images/img-10.jpg" alt="sumit"></div><div class="face-avatar"><img src="images/img-11.jpg" alt="tess"></div><div class="face-avatar"><img src="images/img-12.jpg" alt="larry"></div><div class="face-avatar"><img src="images/img-13.jpg" alt="balaji"></div><div class="face-avatar"><img src="images/img-14.jpg" alt="chelsie"></div><div class="face-avatar"><img src="images/img-15.jpg" alt="suman"></div><div class="face-avatar"><img src="images/img-16.jpg" alt="solon"></div><div class="face-avatar"><img src="images/img-17.jpg" alt="vitalik"></div><div class="face-avatar"><img src="images/img-18.jpg" alt="ben"></div><div class="face-avatar"><img src="images/img-19.jpg" alt="chris"></div></div></div></div></div>
+<div class="form-group" style="margin-top:24px"><label for="sp-name">Full Name</label><input type="text" id="sp-name" name="fullName" placeholder="Jane Smith" autocomplete="name"></div>
+<div class="form-group"><label for="sp-email">Email Address</label><input type="email" id="sp-email" name="email" placeholder="you@company.com" autocomplete="email"></div>
+<div style="text-align:center;margin-top:8px"><button type="button" class="hero-apply-btn" id="sp-btn-1" disabled onclick="spGoTo(2)">Book Your Consult &rarr;</button></div>
+</div>
+
+<div class="step-panel" id="sp-panel-2">
+<h2 class="about-cohort-heading">Book Your Consult</h2>
+<p class="sp-subtitle">Select a time below for a 1-on-1 consultation with Jonathan Herzog.</p>
+<iframe src="https://calendly.com/ceocohort/kickoff?embed_domain=apply.theceocohort.com&embed_type=Inline" class="cal-iframe" title="Book a consult with Jonathan Herzog"></iframe>
+</div>
+
+</section>
+<script>
+function spSaveTs(key,val){
+  try{localStorage.setItem(key,val.toString());}catch(e){}
+  try{document.cookie=key+'='+val+';path=/;max-age=86400;SameSite=Lax';}catch(e){}
+}
+function spGetTs(key){
+  try{var ls=localStorage.getItem(key);if(ls)return parseInt(ls,10);}catch(e){}
+  var m=document.cookie.match(new RegExp("(?:^|;\\s*)"+key+"=(\\d+)"));
+  if(m)return parseInt(m[1],10);
+  return null;
+}
+var spStep=1;
+var spNameEl=document.getElementById('sp-name');
+var spEmailEl=document.getElementById('sp-email');
+var spBtn1=document.getElementById('sp-btn-1');
+function spValidate(){spBtn1.disabled=!(spNameEl.value.trim()&&spEmailEl.value.trim()&&spEmailEl.value.includes('@'));}
+spNameEl.addEventListener('input',spValidate);
+spEmailEl.addEventListener('input',spValidate);
+[spNameEl,spEmailEl].forEach(function(el){el.addEventListener('keydown',function(e){if(e.key==='Enter'&&!spBtn1.disabled)spGoTo(2);});});
+function spGoTo(step){
+  document.getElementById('sp-panel-'+spStep).classList.remove('sp-visible');
+  for(var i=1;i<=3;i++){
+    var dot=document.getElementById('sp-dot-'+i),lbl=document.getElementById('sp-lbl-'+i);
+    dot.className='step-dot';lbl.className='step-lbl';
+    if(i<step){dot.classList.add('sp-done');lbl.classList.add('sp-done');}
+    else if(i===step){dot.classList.add('sp-active');lbl.classList.add('sp-active');}
+  }
+  for(var j=1;j<=2;j++){
+    var conn=document.getElementById('sp-conn-'+j);
+    conn.className='step-conn'+(j<step?' sp-done':'');
+  }
+  spStep=step;
+  var panel=document.getElementById('sp-panel-'+step);
+  panel.classList.remove('sp-visible');void panel.offsetWidth;panel.classList.add('sp-visible');
+  var container=document.getElementById('page-wrap'),target=document.getElementById('apply-form');
+  if(container&&target){
+    var pos=target.getBoundingClientRect().top-container.getBoundingClientRect().top+container.scrollTop;
+    container.scrollTo({top:pos,behavior:'smooth'});
+  }
+  if(step===2){
+    var fd=new FormData();
+    fd.append('Full Name',spNameEl.value.trim());
+    fd.append('Email',spEmailEl.value.trim());
+    fd.append('Step','1 - Applied');
+    fetch('https://formspree.io/f/xreaapnn',{method:'POST',body:fd,headers:{Accept:'application/json'}}).catch(function(){});
+  }
+}
+var CD_KEY='ceo_cohort_ts';
+var cdTs=spGetTs(CD_KEY);
+if(!cdTs){cdTs=Date.now();spSaveTs(CD_KEY,cdTs);}
+var cdExpiry=cdTs+3600000;
+function cdUpdate(){
+  var secs=Math.max(0,Math.floor((cdExpiry-Date.now())/1000));
+  var h=Math.floor(secs/3600),m=Math.floor((secs%3600)/60),s=secs%60;
+  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  if(secs<=1800){
+    document.getElementById('cd-bar').classList.add('cd-urgent');
+    document.getElementById('cd-label').textContent=secs<=300?'⚠ Expiring soon':'Access closing soon';
+    document.getElementById('cd-hint').textContent='Time is running out';
+  }
+}
+cdUpdate();
+setInterval(cdUpdate,1000);
+</script>
+<footer>
+<div class="footer-name">Jonathan Herzog</div>
+<div class="footer-links">
+<a href="https://theceocohort.com/casestudy">Case Studies</a>
+<a href="https://podcasts.apple.com/us/podcast/the-ceo-cohort-kickoff/id1612031713?i=1000750717641">Podcast</a>
+<a href="https://x.com/JonathanHerzog5" target="_blank">Twitter</a>
+<a href="https://www.theceocohort.com/privacy" target="_blank">Privacy</a>
+<a href="https://www.theceocohort.com/terms" target="_blank">Terms</a>
+</div>
+<div class="footer-copy">© 2026 Jonathan Herzog LLC</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var container = document.getElementById('page-wrap');
+
+  function scrollToSection(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target || !container) return;
+    var targetPos = target.getBoundingClientRect().top
+                  - container.getBoundingClientRect().top
+                  + container.scrollTop;
+    container.scrollTo({ top: targetPos, behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('a[href="#apply-form"], a.nav-apply, a.apply-btn').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      scrollToSection('apply-form');
+    });
+  });
+
+  document.querySelectorAll('a[href="#about"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      scrollToSection('about');
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var obs=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');}});},{threshold:0.1});document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});});
+</script>
+</div>
+</body>
+</html>
