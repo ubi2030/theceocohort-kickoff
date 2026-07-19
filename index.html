@@ -423,29 +423,7 @@ setInterval(cdUpdate,1000);
 </div>
 <div class="footer-copy">© 2026 The CEO Cohort<sup>&trade;</sup></div>
 </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  function scrollToSection(targetId) {
-    var target = document.getElementById(targetId);
-    if (!target) return;
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  document.querySelectorAll('a[href="#apply-form"], a.nav-apply, a.apply-btn').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      scrollToSection('apply-form');
-    });
-  });
-
-  document.querySelectorAll('a[href="#about"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      scrollToSection('about');
-    });
-  });
-});
-</script>
+<style>html{scroll-behavior:smooth}</style>
 <script>
 document.addEventListener('DOMContentLoaded',function(){var obs=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');}});},{threshold:0.1});document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});});
 </script>
