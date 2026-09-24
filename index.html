@@ -127,7 +127,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-c
 
 /* CAROUSEL */
 .carousel-section{padding:40px 0 60px;overflow:hidden}
-.carousel-track{display:flex;animation:scroll-left 154s linear infinite;width:max-content}
+.carousel-row{overflow:hidden}.carousel-row+.carousel-row{margin-top:20px}
+.carousel-track{display:flex;animation:scroll-left 60s linear infinite;width:max-content}
+.carousel-track.reverse{animation-name:scroll-right}
+@keyframes scroll-right{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 .carousel-track:hover{animation-play-state:paused}
 @keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .company-card{flex-shrink:0;width:380px;margin:0 10px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:32px 28px;transition:border-color .3s,box-shadow .3s;cursor:default}
@@ -280,91 +283,98 @@ footer{padding:28px 24px;flex-direction:column;gap:16px;text-align:center}
 <div style="text-align:center;margin-top:14px"><a href="#apply-form" class="hero-apply-btn fade-up">Book Now</a></div>
 </section>
 <section class="carousel-section">
-<div class="carousel-track">
+<div class="carousel-row"><div class="carousel-track" style="animation-duration:62s">
 <div class="logo-card"><img src="images/img-1.webp" alt="Amazon"></div>
-<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
 <div class="logo-card"><img src="images/img-3.png" alt="Microsoft"></div>
-<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
 <div class="logo-card"><img src="images/img-5.png" alt="Founders Fund"></div>
-<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
 <div class="logo-card"><img src="images/img-7.png" alt="LVMH"></div>
-<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
 <div class="logo-card"><img src="images/img-9.png" alt="Visa"></div>
-<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
 <div class="logo-card"><img src="images/img-11.png" alt="Mayo Clinic"></div>
-<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
 <div class="logo-card"><img src="images/img-13.png" alt="Siemens"></div>
-<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
 <div class="logo-card"><img src="images/img-15.png" alt="AbbVie"></div>
-<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
 <div class="logo-card"><img src="images/img-20.png" alt="CoinDCX"></div>
-<div class="logo-card"><img src="images/img-21.png" alt="QuickNode"></div>
 <div class="logo-card"><img src="images/img-22.png" alt="AtoB"></div>
-<div class="logo-card"><img src="images/img-23.png" alt="Better Booch"></div>
 <div class="logo-card"><img src="images/img-24.png" alt="Axiom"></div>
-<div class="logo-card"><img src="images/img-25.png" alt="personal.ai"></div>
 <div class="logo-card"><img src="images/img-26.png" alt="Prefix"></div>
-<div class="logo-card"><img src="images/img-27.png" alt="Truemed"></div>
 <div class="logo-card"><img src="images/img-28.png" alt="Zellerfeld"></div>
-<div class="logo-card"><img src="images/img-29.png" alt="Bea Fertility"></div>
 <div class="logo-card"><img src="images/img-30.png" alt="Panzura"></div>
-<div class="logo-card"><img src="images/img-31.png" alt="Grockit"></div>
 <div class="logo-card"><img src="images/img-32.png" alt="ViralMoment"></div>
-<div class="logo-card"><img src="images/img-33.png" alt="IllumiDesk"></div>
 <div class="logo-card"><img src="images/img-34.jpg" alt="Revela"></div>
-<div class="logo-card"><img src="images/img-35.png" alt="Goodcover"></div>
 <div class="logo-card"><img src="images/img-36.png" alt="Doroni"></div>
-<div class="logo-card"><img src="images/img-37.png" alt="UltraSight"></div>
 <div class="logo-card"><img src="images/img-38.png" alt="Workdone"></div>
-<div class="logo-card"><img src="images/img-39.png" alt="B ARVR"></div>
 <div class="logo-card"><img src="images/img-40.png" alt="Charlee.ai"></div>
-<div class="logo-card"><img src="images/img-41.png" alt="Onvi"></div>
 <div class="logo-card"><img src="images/img-42.png" alt="K Health"></div>
-<div class="logo-card"><img src="images/img-43.png" alt="Cloudticity"></div>
 <div class="logo-card"><img src="images/img-44.png" alt="LI.FI"></div>
-<!-- duplicate for loop -->
+<div class="logo-card"><img src="images/img-46.png" alt="ModMod Home"></div>
 <div class="logo-card"><img src="images/img-1.webp" alt="Amazon"></div>
-<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
 <div class="logo-card"><img src="images/img-3.png" alt="Microsoft"></div>
-<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
 <div class="logo-card"><img src="images/img-5.png" alt="Founders Fund"></div>
-<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
 <div class="logo-card"><img src="images/img-7.png" alt="LVMH"></div>
-<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
 <div class="logo-card"><img src="images/img-9.png" alt="Visa"></div>
-<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
 <div class="logo-card"><img src="images/img-11.png" alt="Mayo Clinic"></div>
-<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
 <div class="logo-card"><img src="images/img-13.png" alt="Siemens"></div>
-<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
 <div class="logo-card"><img src="images/img-15.png" alt="AbbVie"></div>
-<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
 <div class="logo-card"><img src="images/img-20.png" alt="CoinDCX"></div>
-<div class="logo-card"><img src="images/img-21.png" alt="QuickNode"></div>
 <div class="logo-card"><img src="images/img-22.png" alt="AtoB"></div>
-<div class="logo-card"><img src="images/img-23.png" alt="Better Booch"></div>
 <div class="logo-card"><img src="images/img-24.png" alt="Axiom"></div>
-<div class="logo-card"><img src="images/img-25.png" alt="personal.ai"></div>
 <div class="logo-card"><img src="images/img-26.png" alt="Prefix"></div>
-<div class="logo-card"><img src="images/img-27.png" alt="Truemed"></div>
 <div class="logo-card"><img src="images/img-28.png" alt="Zellerfeld"></div>
-<div class="logo-card"><img src="images/img-29.png" alt="Bea Fertility"></div>
 <div class="logo-card"><img src="images/img-30.png" alt="Panzura"></div>
-<div class="logo-card"><img src="images/img-31.png" alt="Grockit"></div>
 <div class="logo-card"><img src="images/img-32.png" alt="ViralMoment"></div>
-<div class="logo-card"><img src="images/img-33.png" alt="IllumiDesk"></div>
 <div class="logo-card"><img src="images/img-34.jpg" alt="Revela"></div>
-<div class="logo-card"><img src="images/img-35.png" alt="Goodcover"></div>
 <div class="logo-card"><img src="images/img-36.png" alt="Doroni"></div>
-<div class="logo-card"><img src="images/img-37.png" alt="UltraSight"></div>
 <div class="logo-card"><img src="images/img-38.png" alt="Workdone"></div>
-<div class="logo-card"><img src="images/img-39.png" alt="B ARVR"></div>
 <div class="logo-card"><img src="images/img-40.png" alt="Charlee.ai"></div>
-<div class="logo-card"><img src="images/img-41.png" alt="Onvi"></div>
 <div class="logo-card"><img src="images/img-42.png" alt="K Health"></div>
-<div class="logo-card"><img src="images/img-43.png" alt="Cloudticity"></div>
 <div class="logo-card"><img src="images/img-44.png" alt="LI.FI"></div>
-</div>
+<div class="logo-card"><img src="images/img-46.png" alt="ModMod Home"></div>
+</div></div>
+<div class="carousel-row"><div class="carousel-track reverse" style="animation-duration:62s">
+<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
+<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
+<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
+<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
+<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
+<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
+<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
+<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
+<div class="logo-card"><img src="images/img-21.png" alt="QuickNode"></div>
+<div class="logo-card"><img src="images/img-23.png" alt="Better Booch"></div>
+<div class="logo-card"><img src="images/img-25.png" alt="personal.ai"></div>
+<div class="logo-card"><img src="images/img-27.png" alt="Truemed"></div>
+<div class="logo-card"><img src="images/img-29.png" alt="Bea Fertility"></div>
+<div class="logo-card"><img src="images/img-31.png" alt="Grockit"></div>
+<div class="logo-card"><img src="images/img-33.png" alt="IllumiDesk"></div>
+<div class="logo-card"><img src="images/img-35.png" alt="Goodcover"></div>
+<div class="logo-card"><img src="images/img-37.png" alt="UltraSight"></div>
+<div class="logo-card"><img src="images/img-39.png" alt="B ARVR"></div>
+<div class="logo-card"><img src="images/img-41.png" alt="Onvi"></div>
+<div class="logo-card"><img src="images/img-43.png" alt="Cloudticity"></div>
+<div class="logo-card"><img src="images/img-45.png" alt="AIVF"></div>
+<div class="logo-card"><img src="images/img-47.png" alt="Breadless"></div>
+<div class="logo-card"><img src="images/img-2.png" alt="NVIDIA"></div>
+<div class="logo-card"><img src="images/img-4.png" alt="Sequoia Capital"></div>
+<div class="logo-card"><img src="images/img-6.png" alt="Johnson & Johnson"></div>
+<div class="logo-card"><img src="images/img-8.png" alt="JP Morgan"></div>
+<div class="logo-card"><img src="images/img-10.png" alt="Harvard University"></div>
+<div class="logo-card"><img src="images/img-12.png" alt="T-Mobile"></div>
+<div class="logo-card"><img src="images/img-14.png" alt="United Healthcare"></div>
+<div class="logo-card"><img src="images/img-17.png" alt="Exxon"></div>
+<div class="logo-card"><img src="images/img-21.png" alt="QuickNode"></div>
+<div class="logo-card"><img src="images/img-23.png" alt="Better Booch"></div>
+<div class="logo-card"><img src="images/img-25.png" alt="personal.ai"></div>
+<div class="logo-card"><img src="images/img-27.png" alt="Truemed"></div>
+<div class="logo-card"><img src="images/img-29.png" alt="Bea Fertility"></div>
+<div class="logo-card"><img src="images/img-31.png" alt="Grockit"></div>
+<div class="logo-card"><img src="images/img-33.png" alt="IllumiDesk"></div>
+<div class="logo-card"><img src="images/img-35.png" alt="Goodcover"></div>
+<div class="logo-card"><img src="images/img-37.png" alt="UltraSight"></div>
+<div class="logo-card"><img src="images/img-39.png" alt="B ARVR"></div>
+<div class="logo-card"><img src="images/img-41.png" alt="Onvi"></div>
+<div class="logo-card"><img src="images/img-43.png" alt="Cloudticity"></div>
+<div class="logo-card"><img src="images/img-45.png" alt="AIVF"></div>
+<div class="logo-card"><img src="images/img-47.png" alt="Breadless"></div>
+</div></div>
 </section>
 
 <section class="about-cohort-section" id="about">
